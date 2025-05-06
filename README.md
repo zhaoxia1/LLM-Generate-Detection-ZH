@@ -67,7 +67,7 @@ project/
 ### 机器学习模型（ML部分）
 #### 1. 特征提取与模型训练
 ##### 1.1 修改参数
-打开 `submit_files/model_code/ML/features_extractor.py` 文件，根据需要修改以下参数：
+打开 `project/model_code/ML/features_extractor.py` 文件，根据需要修改以下参数：
 ```python
 train_sample_size = 6000  # 采样大小
 dev_sample_size = 1000  # 采样大小
@@ -79,7 +79,7 @@ use_tfidf = False  # 是否使用TF-IDF特征
 ##### 1.2 执行训练
 在终端中执行以下命令：
 ```bash
-python submit_files/model_code/ML/features_extractor.py
+python project/model_code/ML/features_extractor.py
 ```
 该脚本将完成以下操作：
 - 从 `data` 文件夹中读取训练和验证数据。
@@ -92,7 +92,7 @@ python submit_files/model_code/ML/features_extractor.py
 ##### 2.1 测试集预测
 在终端中执行以下命令：
 ```bash
-python submit_files/model_code/ML/model_predict.py
+python project/model_code/ML/model_predict.py
 ```
 该脚本将完成以下操作：
 - 加载预处理对象和模型。
@@ -111,13 +111,13 @@ if __name__ == '__main__':
 
 ### 深度学习模型（DL部分）
 #### 1. 定义模型
-`submit_files/model_code/DL/model.py` 文件中定义了 `EnhancedMMOE` 模型，需确保该文件中的模型定义正确。
+`project/model_code/DL/model.py` 文件中定义了 `EnhancedMMOE` 模型，需确保该文件中的模型定义正确。
 
 #### 2. 使用模型进行预测
 以下是加载预训练的BERT模型和 `EnhancedMMOE` 模型并进行预测的示例代码：
 ```python
 import torch
-from submit_files.model_code.DL.model import EnhancedMMOE
+from project.model_code.DL.model import EnhancedMMOE
 
 # 初始化模型
 bert_path = 'cn-macbert'
@@ -143,7 +143,7 @@ with torch.no_grad():
 ### 保存预测结果到JSON文件
 若想将预测结果保存到JSON文件，可使用 `save2json` 函数：
 ```python
-from submit_files.model_code.MODELVOTING import save2json
+from project.model_code.MODELVOTING import save2json
 
 txt_path = 'pred_data/vote_pred.txt'
 json_path = 'data/test.json'
