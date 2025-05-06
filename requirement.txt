@@ -1,0 +1,12 @@
+torch=2.5.1+cu121
+transformers=4.28.1
+scikit-learn=1.5.1
+pandas=2.2.2
+numpy=1.26.4
+tqdm=4.66.5
+jieba=0.42.1
+snownlp=0.12.3
+lightgbm=4.6.0
+catboost=1.2.8
+xgboost=2.1.2
+joblib=1.4.2
